@@ -1,93 +1,394 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Farhana Taj | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Farhana Taj | Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6b26d9",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#171220",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+        .hero-pattern {
+            background-color: #f7f6f8;
+            background-image: radial-gradient(#6b26d9 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+    </style>
 </head>
-<body>
-
-<header class="navbar">
-  <div class="logo">FT.</div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <a href="#" class="btn-outline">Resume</a>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="bg-primary text-white p-1.5 rounded-lg">
+<span class="material-symbols-outlined text-xl">terminal</span>
+</div>
+<span class="text-xl font-extrabold tracking-tight text-primary">FT.</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#about">About</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#skills">Skills</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#projects">Projects</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+                    Resume
+                </button>
+</div>
+</div>
 </header>
-
-<section class="hero">
-  <p class="tag">Open for Collaboration</p>
-  <h1>Hi, I'm <span>Farhana Taj</span></h1>
-  <p class="subtitle">
-    AI Developer | Full Stack Developer | Data Analyst
-  </p>
-  <p class="description">
-    Building AI-powered and data-driven solutions with clean design.
-    Transforming complex challenges into intuitive digital experiences.
-  </p>
-  <div class="hero-buttons">
-    <a href="#projects" class="btn-primary">View My Work →</a>
-    <a href="#" class="btn-icon">⌘</a>
-  </div>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden hero-pattern">
+<div class="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center w-full"><div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-6">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                        OPEN FOR COLLABORATION
+                    </div>
+<h1 class="text-5xl lg:text-7xl font-black text-slate-900 dark:text-white leading-[1.1] mb-6">
+                        Hi, I'm <span class="text-primary">Farhana Taj</span>
+</h1>
+<p class="text-xl text-slate-600 dark:text-slate-400 font-medium mb-4">
+                        AI Developer | Full Stack Developer | Data Analyst
+                    </p>
+<p class="text-lg text-slate-500 dark:text-slate-500 max-w-xl mb-10 leading-relaxed">
+                        Building AI-powered and data-driven solutions with clean design. Transforming complex challenges into intuitive digital experiences.
+                    </p>
+<div class="flex flex-wrap gap-4 justify-center">
+<button class="bg-primary text-white px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:translate-y-[-2px] transition-all shadow-xl shadow-primary/30">
+                            View My Work <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<div class="flex items-center gap-3">
+<a class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">code</span>
+</a>
+<a class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">person_pin</span>
+</a>
+</div>
+</div>
+</div></div>
 </section>
-
-<section id="about" class="section light">
-  <h2>About <span>Me</span></h2>
-  <p>
-    I am a Computer Science graduate with strong expertise in Artificial Intelligence,
-    Natural Language Processing, and Full Stack Development.
-    I enjoy transforming raw data into actionable insights.
-  </p>
+<!-- About Section -->
+<section class="py-24 bg-white dark:bg-background-dark" id="about">
+<div class="max-w-7xl mx-auto px-6"><div class="max-w-3xl mx-auto text-center">
+<h2 class="text-4xl font-black mb-8">About <span class="text-primary">Me</span></h2>
+<div class="space-y-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+<p>
+                                I am a Computer Science graduate with a 3.97/4.0 CGPA, specializing in Artificial Intelligence, Natural Language Processing, and Full Stack Development.
+                            </p>
+<p>
+                                My passion lies in building AI-powered applications that solve real-world problems. Whether it's fine-tuning large language models or designing seamless user interfaces, I focus on the intersection of technical rigor and user-centric design.
+                            </p>
+<p>
+                                I enjoy transforming raw data into actionable insights, helping organizations make informed decisions through robust data pipelines and interactive visualizations.
+                            </p>
+</div>
+</div></div>
 </section>
-
-<section id="skills" class="section">
-  <h2>Technical <span>Arsenal</span></h2>
-  <div class="grid">
-    <div class="card">Python</div>
-    <div class="card">PyTorch</div>
-    <div class="card">Transformers</div>
-    <div class="card">Flask</div>
-    <div class="card">React</div>
-    <div class="card">MongoDB</div>
-  </div>
+<!-- Technical Skills -->
+<section class="py-24 bg-background-light dark:bg-slate-900/50" id="skills">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-black mb-4">Technical <span class="text-primary">Arsenal</span></h2>
+<p class="text-slate-500 dark:text-slate-400">Tools and technologies I use to bring ideas to life</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Languages -->
+<div class="bg-white dark:bg-background-dark p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-4 mb-6">
+<div class="bg-primary/10 p-3 rounded-xl text-primary">
+<span class="material-symbols-outlined">code</span>
+</div>
+<h3 class="text-xl font-bold">Languages</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">Python</span>
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">Java</span>
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">C++</span>
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">SQL</span>
+</div>
+</div>
+<!-- AI/ML -->
+<div class="bg-white dark:bg-background-dark p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-4 mb-6">
+<div class="bg-primary/10 p-3 rounded-xl text-primary">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<h3 class="text-xl font-bold">AI &amp; ML</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">PyTorch</span>
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">Transformers</span>
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">DeBERTa</span>
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">Scikit-learn</span>
+</div>
+</div>
+<!-- Web Dev -->
+<div class="bg-white dark:bg-background-dark p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-4 mb-6">
+<div class="bg-primary/10 p-3 rounded-xl text-primary">
+<span class="material-symbols-outlined">language</span>
+</div>
+<h3 class="text-xl font-bold">Web Development</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">React</span>
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">Next.js</span>
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">Flask</span>
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">Tailwind CSS</span>
+</div>
+</div>
+<!-- Data Tools -->
+<div class="bg-white dark:bg-background-dark p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-4 mb-6">
+<div class="bg-primary/10 p-3 rounded-xl text-primary">
+<span class="material-symbols-outlined">bar_chart</span>
+</div>
+<h3 class="text-xl font-bold">Data Tools</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">Power BI</span>
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">Tableau</span>
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">Excel</span>
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">MySQL</span>
+</div>
+</div>
+<!-- Design -->
+<div class="bg-white dark:bg-background-dark p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-4 mb-6">
+<div class="bg-primary/10 p-3 rounded-xl text-primary">
+<span class="material-symbols-outlined">palette</span>
+</div>
+<h3 class="text-xl font-bold">Design</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">Figma</span>
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">Canva</span>
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">Adobe XD</span>
+</div>
+</div>
+<!-- Cloud/Firebase -->
+<div class="bg-white dark:bg-background-dark p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-4 mb-6">
+<div class="bg-primary/10 p-3 rounded-xl text-primary">
+<span class="material-symbols-outlined">cloud</span>
+</div>
+<h3 class="text-xl font-bold">Cloud &amp; Others</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">Firebase</span>
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">Git</span>
+<span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium">Postman</span>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<section id="projects" class="section light">
-  <h2>Featured <span>Projects</span></h2>
-
-  <div class="project-grid">
-
-    <div class="project-card">
-      <h3>Aspect-Based Sentiment Analysis</h3>
-      <p>Deep learning system using DeBERTa for granular insights.</p>
-      <a href="project.html" class="btn-primary small">View Project</a>
-    </div>
-
-    <div class="project-card">
-      <h3>AgriSense AI</h3>
-      <p>Plant disease detection using computer vision.</p>
-      <a href="#" class="btn-primary small">View Project</a>
-    </div>
-
-  </div>
+<!-- Featured Projects -->
+<section class="py-24 bg-white dark:bg-background-dark" id="projects">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex items-end justify-between mb-16">
+<div>
+<h2 class="text-4xl font-black mb-4">Featured <span class="text-primary">Projects</span></h2>
+<p class="text-slate-500 dark:text-slate-400">Solving real-world problems through code</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-1 group" href="#">
+                        View all projects <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+<div class="grid lg:grid-cols-2 gap-12">
+<!-- Project 1: ABSA -->
+<div class="group">
+<div class="relative overflow-hidden rounded-3xl mb-6 bg-slate-100 dark:bg-slate-800">
+<div class="aspect-video relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-purple-500/10 z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Modern dashboard showing sentiment analysis data visualizations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHkdjuIs9mXDR40qyuXcv6Zz_-msn5jodeMpMyswUsrOagTlPO2i7QX0c6Cga3QfvoF1tGeI8Gn4gCTr7pWSnaz4ys49-GZ6gBCaSubRm_1xqO-iSG_gaaMeESoMVi7jWJZ7zJ4avjmZ1MkYYXRQv7AlJ9kIOm26R5r_sxdAPLvtrWLgdJYTYDvWFqvjYIJ7-ImsbTW_hklpMl872klJlKQV7TJef3-rfXePoqQJPY8aTmIWrWfaT3RDuoUP-gqgkH3IDQA-9GPIk"/>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">NLP</span>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">DeBERTa</span>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">Flask</span>
+</div>
+<h3 class="text-2xl font-black mb-4">Aspect-Based Sentiment Analysis</h3>
+<p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                            Transformer-based system using DeBERTa to analyze granular sentiment at the aspect level. Achieved high accuracy in identifying emotional polarity for specific product features.
+                        </p>
+<div class="flex items-center gap-6">
+<a class="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">link</span> View Project
+                            </a>
+<a class="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">code</span> Source Code
+                            </a>
+</div>
+</div>
+<!-- Project 2: AgriSense AI -->
+<div class="group">
+<div class="relative overflow-hidden rounded-3xl mb-6 bg-slate-100 dark:bg-slate-800">
+<div class="aspect-video relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-green-500/20 to-primary/10 z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="AI mobile application for agriculture disease detection" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv8jTbdjXO9jkhOZy_nSRh-syJ8p3yUvEv-2dT5vX6gtMiL4svcXk-G6JBCLDEUl8SSxWhoE9xQZHbHZDSYkDAP8DC6I3YO_r4wJ6c_YpaXga28J0n5I8BGcGzJJr674Ddjd_1Hz0LAFulDDvfza506FpfenRaaCVuDoXsR2q0UkePfyuA5MXdU6s74tCTW5zD3x11tXKg3WuEiXbJuyeEUb0J5YqIi5m5x51orB2koBFJ-Kkrx2jwGbFUkWhJ8iVdOeCwNOms8to"/>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">PWA</span>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">Next.js</span>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">Firebase</span>
+</div>
+<h3 class="text-2xl font-black mb-4">AgriSense AI: Farmer Advisory</h3>
+<p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                            A Progressive Web App featuring plant disease detection via computer vision and an AI chatbot for localized farmer advisory services. Integrated Firebase for secure authentication.
+                        </p>
+<div class="flex items-center gap-6">
+<a class="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">link</span> Live Demo
+                            </a>
+<a class="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">code</span> Source Code
+                            </a>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<section id="contact" class="cta">
-  <h2>Let's build something incredible together</h2>
-  <p>Currently looking for opportunities in AI & Data Analytics.</p>
-  <div class="cta-buttons">
-    <a href="#" class="btn-white">Email Me</a>
-    <a href="#" class="btn-white-outline">GitHub</a>
-  </div>
+<!-- Data & Analytics -->
+<section class="py-24 bg-slate-50 dark:bg-slate-900/40">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-4xl font-black mb-8">Data <span class="text-primary">&amp; Analytics</span></h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 h-fit">
+<span class="material-symbols-outlined text-3xl text-primary">database</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2">Subscription Analysis</h4>
+<p class="text-slate-500 dark:text-slate-400">Optimized customer retention strategies using complex SQL window functions and exploratory data analysis on 10k+ subscription records.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 h-fit">
+<span class="material-symbols-outlined text-3xl text-primary">leaderboard</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2">Power BI KPI Dashboards</h4>
+<p class="text-slate-500 dark:text-slate-400">Designed interactive dashboards for sales tracking and inventory management, improving reporting speed by 40%.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-2 rounded-3xl shadow-2xl border border-slate-100 dark:border-slate-700 overflow-hidden">
+<img class="w-full rounded-2xl" data-alt="Detailed Power BI dashboard showing colorful KPI charts and graphs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFeWsf7CZhrkrkeg530mohdlXbNIKjc0KXTNO9eto9McX5xCa_4OzzFRX-9yuFiMGdDP0-Jlisj_-wBvKRAvmsgGK8rFewpmGL1ItD95SuEw5vXTvDfFzfxeqvWcidjhQjzmp067Dqv11s2RFfPm3fapK-SQy1SefG1860hycAK8cL3Qa3dgjdwAJUdMhz2ANZA2cxOEQbP8lciHTaerWN2VcQ_VUUBMhfMEy7BRQfNDCdYuqXsoBmYoyDKaR_2SYXxvnKYcAfoS8"/>
+</div>
+</div>
+</div>
 </section>
-
-<footer>
-  © 2024 Farhana Taj. All rights reserved.
+<!-- Design Portfolio -->
+<section class="py-24 bg-white dark:bg-background-dark">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-black mb-4">Design <span class="text-primary">Gallery</span></h2>
+<p class="text-slate-500 dark:text-slate-400">Creative visuals and 50+ social media assets</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="aspect-[3/4] rounded-2xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Vibrant aesthetic Instagram social media post design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnEkgU9slnJQbtIoa6lyk8_UyCx0P43XgO2cMXMEgTIOgNKOzmqzmUO3VrXWj0plWe6VbZJYlEoYACWR7A5_mYmksfq7dfl2qzRJrMGD_cMmomRqRHt20UtXkXcWb64kLOcd3T3iEQkNp6YnrmWJd1LN2MAisPjWOxRN6XXkghwY34gijzfFOfAmZN_O31FydiTFdBOwLN_Qg9jT-kwEFd5N4N9ZeUiQrDFraHH7yCdKMLCHRx4_aIBPs6fY7bcc7bcdjvUrO5uzk"/>
+</div>
+<div class="aspect-[3/4] rounded-2xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Clean abstract graphic design for event poster" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb-DhzaVnhHYYz2X0Hm2rUyQrqpOkWt28Ymxtsv0TAEm6anv28qoOcAxJnIVMhNRoBHUjsFTpAM-s7rZAazfb7J8ju0h6hUxiXE0aEP20Nfk0xFmyQr-lhjW3sDSbSYrLrIHPnEh46OcPDTZs2ddYmug9Plq0I3nNtf1cPMh3XZ0_VJcuFMg9MDM90LUKWsnvUE81rL-8woF-MlfxAfxEfnwdg-02jEmbkst-PDlMV7z5LuEjwMk0smJwNG0-y8jyggUlbT-nVOVo"/>
+</div>
+<div class="aspect-[3/4] rounded-2xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Creative mobile app UI design layout mockup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2x8pQrpJ0OxQDUXQH1K5YVaAu3CTwuITzrqaqwbo5geIcvnW03bhOuU_SOIN6-W7a2zh_vUN1-UeyXKoz7lvdeRhkANlp8KRFAM6YtGVlbrGOkbqOBLSpYKfzBzLYCKIRgE1h_cWmJeao20lC6s-N_TUg91jirvYdte6gby_om0r4a24xTycQ5wfcLafGdYF9cO6Ga6BBi57TwpCm-MKlj9vtSipZNHs9LCIQxWkFiqv6qIWOmfGZCrNrGVhT7xTOfKkg3byPEks"/>
+</div>
+<div class="aspect-[3/4] rounded-2xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Professional branding and marketing creative design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOR1zFhGYrbWJ263nlPkIbfv6E1U8510-zTNwTlM7pMt8R5NH6FR4G1XmSG-q30lvsebWQgUFWClY3RAoUT82uiYnqI_5Ik2Y6BBckonpWMIJjwhYy3vNqQAlPje22y9QSpcjXKVJ1rmf65crv0ohTEjqLJySxjT_6btMlduyV_elk3xFICRZKavvtA4BfyaW6fYcD2VZ-XPihaOOGZz_-yEgSHbCx1K029BIzvCBDPUXrJYUkY2XRCrwrCUAylgGufhDFcQVfGTI"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-24 bg-primary text-white overflow-hidden relative" id="contact">
+<div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-48 -mt-48 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-900/30 rounded-full -ml-48 -mb-48 blur-3xl"></div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="text-4xl lg:text-5xl font-black mb-8">Let's build something <br/> incredible together</h2>
+<p class="text-primary-100 text-xl mb-12 opacity-90">
+                        Currently looking for opportunities in AI development and Data Analytics.
+                    </p>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="flex items-center gap-4 bg-white/10 hover:bg-white/20 px-8 py-6 rounded-2xl transition-all border border-white/20" href="mailto:farhana.taj@example.com">
+<span class="material-symbols-outlined text-3xl">mail</span>
+<div class="text-left">
+<div class="text-xs uppercase font-bold opacity-60">Email Me</div>
+<div class="text-lg font-bold">farhana.taj@mail.com</div>
+</div>
+</a>
+<a class="flex items-center gap-4 bg-white/10 hover:bg-white/20 px-8 py-6 rounded-2xl transition-all border border-white/20" href="#">
+<span class="material-symbols-outlined text-3xl">person_add</span>
+<div class="text-left">
+<div class="text-xs uppercase font-bold opacity-60">LinkedIn</div>
+<div class="text-lg font-bold">farhanataj-dev</div>
+</div>
+</a>
+<a class="flex items-center gap-4 bg-white/10 hover:bg-white/20 px-8 py-6 rounded-2xl transition-all border border-white/20" href="#">
+<span class="material-symbols-outlined text-3xl">data_object</span>
+<div class="text-left">
+<div class="text-xs uppercase font-bold opacity-60">GitHub</div>
+<div class="text-lg font-bold">farhana-dev-ai</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="py-12 bg-white dark:bg-background-dark border-t border-slate-100 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-2">
+<div class="bg-primary text-white p-1 rounded-lg">
+<span class="material-symbols-outlined text-base">terminal</span>
+</div>
+<span class="text-lg font-extrabold tracking-tight text-primary">FT.</span>
+</div>
+<p class="text-slate-500 text-sm">© 2024 Farhana Taj. All rights reserved.</p>
+<div class="flex items-center gap-6">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">chat</span>
+</a>
+</div>
+</div>
 </footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+</body></html>
