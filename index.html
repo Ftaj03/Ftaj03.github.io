@@ -7,68 +7,85 @@
 </head>
 <body>
 
-<!-- Navbar -->
-<header>
+<header class="navbar">
   <div class="logo">FT.</div>
   <nav>
     <a href="#about">About</a>
+    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
-  <button class="btn">Resume</button>
+  <a href="#" class="btn-outline">Resume</a>
 </header>
 
-<!-- Hero Section -->
 <section class="hero">
+  <p class="tag">Open for Collaboration</p>
   <h1>Hi, I'm <span>Farhana Taj</span></h1>
-  <p>AI Developer | Full Stack Developer | Data Analyst</p>
-  <button class="primary-btn">View My Work</button>
+  <p class="subtitle">
+    AI Developer | Full Stack Developer | Data Analyst
+  </p>
+  <p class="description">
+    Building AI-powered and data-driven solutions with clean design.
+    Transforming complex challenges into intuitive digital experiences.
+  </p>
+  <div class="hero-buttons">
+    <a href="#projects" class="btn-primary">View My Work →</a>
+    <a href="#" class="btn-icon">⌘</a>
+  </div>
 </section>
 
-<!-- About -->
-<section id="about" class="about">
+<section id="about" class="section light">
   <h2>About <span>Me</span></h2>
   <p>
-    I am a Computer Science graduate with expertise in AI,
-    Natural Language Processing, and Web Development.
-    I love transforming data into actionable insights.
+    I am a Computer Science graduate with strong expertise in Artificial Intelligence,
+    Natural Language Processing, and Full Stack Development.
+    I enjoy transforming raw data into actionable insights.
   </p>
 </section>
 
-<!-- Skills -->
-<section class="skills">
+<section id="skills" class="section">
   <h2>Technical <span>Arsenal</span></h2>
-  <div class="skill-box">
+  <div class="grid">
     <div class="card">Python</div>
-    <div class="card">Java</div>
-    <div class="card">SQL</div>
     <div class="card">PyTorch</div>
+    <div class="card">Transformers</div>
     <div class="card">Flask</div>
     <div class="card">React</div>
+    <div class="card">MongoDB</div>
   </div>
 </section>
 
-<!-- Projects -->
-<section id="projects" class="projects">
+<section id="projects" class="section light">
   <h2>Featured <span>Projects</span></h2>
 
-  <div class="project-card">
-    <h3>Aspect-Based Sentiment Analysis</h3>
-    <p>Deep learning system using DeBERTa for granular sentiment insights.</p>
-    <button onclick="openProject()">View Project</button>
-  </div>
+  <div class="project-grid">
 
+    <div class="project-card">
+      <h3>Aspect-Based Sentiment Analysis</h3>
+      <p>Deep learning system using DeBERTa for granular insights.</p>
+      <a href="project.html" class="btn-primary small">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h3>AgriSense AI</h3>
+      <p>Plant disease detection using computer vision.</p>
+      <a href="#" class="btn-primary small">View Project</a>
+    </div>
+
+  </div>
 </section>
 
-<!-- Contact -->
-<section id="contact" class="contact">
+<section id="contact" class="cta">
   <h2>Let's build something incredible together</h2>
-  <p>Email: farhana.taj@email.com</p>
-  <p>GitHub: github.com/farhana-dev</p>
+  <p>Currently looking for opportunities in AI & Data Analytics.</p>
+  <div class="cta-buttons">
+    <a href="#" class="btn-white">Email Me</a>
+    <a href="#" class="btn-white-outline">GitHub</a>
+  </div>
 </section>
 
 <footer>
-  <p>© 2024 Farhana Taj. All rights reserved.</p>
+  © 2024 Farhana Taj. All rights reserved.
 </footer>
 
 <script src="script.js"></script>
