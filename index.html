@@ -25,6 +25,20 @@
                 },
             },
         }
+     
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('animate-fade-in');
+    }
+  });
+});
+
+document.querySelectorAll('section').forEach(section => {
+  section.classList.add('opacity-0');
+  observer.observe(section);
+});
+
     </script>
 <style>
         body { font-family: 'Inter', sans-serif; }
@@ -34,6 +48,16 @@
             background-image: radial-gradient(#6b26d9 0.5px, transparent 0.5px);
             background-size: 24px 24px;
         }
+        html {
+  scroll-behavior: smooth;
+        }
+        @keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+ }
+.animate-fade-in {
+  animation: fadeIn 1s ease forwards;
+}
     </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
@@ -53,9 +77,21 @@
 <a class="text-sm font-semibold hover:text-primary transition-colors" href="#contact">Contact</a>
 </nav>
 <div class="flex items-center gap-4">
-<button class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
-                    Resume
-                </button>
+
+    <!-- Dark Mode Toggle Button -->
+    <button id="theme-toggle"
+        class="p-2 rounded-lg bg-gray-200 dark:bg-slate-700 hover:scale-105 transition-all">
+        <span class="material-symbols-outlined text-xl">
+            dark_mode
+        </span>
+    </button>
+
+    <!-- Resume Button -->
+    <button
+        class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+        Resume
+    </button>
+
 </div>
 </div>
 </header>
