@@ -40,6 +40,13 @@ document.querySelectorAll('section').forEach(section => {
 });
 
     </script>
+        <script>
+const toggleBtn = document.getElementById('theme-toggle');
+
+toggleBtn.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+});
+</script>
 <style>
         body { font-family: 'Inter', sans-serif; }
         .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
