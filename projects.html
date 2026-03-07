@@ -11,15 +11,15 @@
 
 <script>
 tailwind.config = {
-darkMode:"class",
-theme:{
-extend:{
-colors:{
-primary:"#6b26d9",
-"background-light":"#f7f6f8",
-"background-dark":"#171220"
+darkMode: "class",
+theme: {
+extend: {
+colors: {
+primary: "#6b26d9",
+"background-light": "#f7f6f8",
+"background-dark": "#171220",
 },
-fontFamily:{display:["Inter"]}
+fontFamily: {display:["Inter"]}
 }
 }
 }
@@ -29,13 +29,9 @@ fontFamily:{display:["Inter"]}
 
 body{font-family:'Inter',sans-serif;}
 
-html{
-scroll-behavior:smooth;
-}
-
 .hero-pattern{
 background-color:#f7f6f8;
-background-image:radial-gradient(#6b26d9 0.6px, transparent 0.6px);
+background-image:radial-gradient(#6b26d9 0.5px, transparent 0.5px);
 background-size:24px 24px;
 }
 
@@ -44,8 +40,8 @@ transition:all .35s ease;
 }
 
 .project-card:hover{
-transform:translateY(-8px) scale(1.02);
-box-shadow:0 20px 50px rgba(0,0,0,0.12);
+transform:translateY(-10px) scale(1.02);
+box-shadow:0 20px 50px rgba(0,0,0,0.15);
 }
 
 .tag{
@@ -57,11 +53,30 @@ font-weight:600;
 border-radius:999px;
 }
 
+.filter-btn{
+background:#e5e7eb;
+padding:8px 18px;
+border-radius:999px;
+font-weight:600;
+font-size:14px;
+transition:.3s;
+}
+
+.dark .filter-btn{
+background:#374151;
+color:white;
+}
+
+.filter-btn.active{
+background:#6b26d9;
+color:white;
+}
+
 </style>
 
 </head>
 
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white transition-colors duration-300">
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white">
 
 <!-- NAVBAR -->
 
@@ -76,48 +91,42 @@ border-radius:999px;
 <span class="text-xl font-extrabold text-primary">FT.</span>
 </div>
 
-<a href="index.html"
-class="text-sm font-semibold hover:text-primary transition">
+<a href="index.html" class="text-sm font-semibold hover:text-primary transition">
 ← Back to Home
 </a>
 
 </div>
 </header>
 
+
 <!-- HERO -->
 
-<section class="hero-pattern pt-40 pb-24 text-center">
+<section class="hero-pattern pt-40 pb-20 text-center">
 
 <h1 class="text-5xl font-black mb-6">
-
-My <span class="text-primary">Projects</span>
-
+All <span class="text-primary">Projects</span>
 </h1>
 
-<p class="max-w-2xl mx-auto text-slate-600 dark:text-slate-400 text-lg">
-
-A collection of my work in Artificial Intelligence, Web Development,
-Data Analytics, and UI/UX Design.
-
+<p class="max-w-2xl mx-auto text-slate-600 dark:text-slate-400">
+Complete portfolio of my work across AI, software development, data analytics and UI/UX design.
 </p>
 
 </section>
 
+
 <!-- FILTER BUTTONS -->
 
-<section class="pb-10">
+<div class="flex justify-center gap-4 mb-16 flex-wrap">
 
-<div class="max-w-7xl mx-auto px-6 flex flex-wrap gap-4 justify-center">
-
-<button onclick="filterProjects('all')" class="filter-btn px-5 py-2 bg-primary text-white rounded-full text-sm font-semibold">All</button>
-<button onclick="filterProjects('ai')" class="filter-btn px-5 py-2 bg-slate-200 dark:bg-slate-700 rounded-full text-sm font-semibold">AI</button>
-<button onclick="filterProjects('web')" class="filter-btn px-5 py-2 bg-slate-200 dark:bg-slate-700 rounded-full text-sm font-semibold">Web</button>
-<button onclick="filterProjects('data')" class="filter-btn px-5 py-2 bg-slate-200 dark:bg-slate-700 rounded-full text-sm font-semibold">Data</button>
-<button onclick="filterProjects('design')" class="filter-btn px-5 py-2 bg-slate-200 dark:bg-slate-700 rounded-full text-sm font-semibold">Design</button>
+<button onclick="filterProjects('all',this)" class="filter-btn active">All</button>
+<button onclick="filterProjects('ai',this)" class="filter-btn">AI</button>
+<button onclick="filterProjects('desktop',this)" class="filter-btn">Desktop</button>
+<button onclick="filterProjects('web',this)" class="filter-btn">Web</button>
+<button onclick="filterProjects('data',this)" class="filter-btn">Data</button>
+<button onclick="filterProjects('design',this)" class="filter-btn">Design</button>
 
 </div>
 
-</section>
 
 <!-- PROJECT GRID -->
 
@@ -125,41 +134,44 @@ Data Analytics, and UI/UX Design.
 
 <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-<!-- PROJECT -->
 
+<!-- ABSA -->
 <div class="project-card ai bg-white dark:bg-slate-900 p-6 rounded-2xl">
 
 <span class="material-symbols-outlined text-5xl text-primary mb-4">psychology</span>
 
-<h3 class="text-xl font-bold mb-2">Aspect-Based Sentiment Analysis</h3>
+<h3 class="text-xl font-bold mb-2">
+Aspect-Based Sentiment Analysis (DeBERTa)
+</h3>
 
-<p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
-Transformer model (DeBERTa) for multi-aspect sentiment analysis with Flask API.
+<p class="text-sm text-slate-500 mb-4">
+Transformer-based NLP system for multi-aspect sentiment analysis using DeBERTa.
 </p>
 
 <div class="flex flex-wrap gap-2 mb-4">
 <span class="tag">NLP</span>
-<span class="tag">DeBERTa</span>
+<span class="tag">PyTorch</span>
 <span class="tag">Flask</span>
 </div>
 
-<a href="https://github.com/Ftaj03/ABSA_webapp.git" class="text-primary font-semibold text-sm flex items-center gap-1">
-View Code →
+<a href="https://github.com/Ftaj03/ABSA_webapp.git" class="text-primary font-semibold text-sm">
+Source Code →
 </a>
 
 </div>
 
 
-<!-- PROJECT -->
-
+<!-- AGRISENSE -->
 <div class="project-card ai bg-white dark:bg-slate-900 p-6 rounded-2xl">
 
 <span class="material-symbols-outlined text-5xl text-primary mb-4">agriculture</span>
 
-<h3 class="text-xl font-bold mb-2">AgriSense AI</h3>
+<h3 class="text-xl font-bold mb-2">
+AgriSense AI – Smart Farming App
+</h3>
 
-<p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
-AI powered farming web app with disease detection and AI chatbot.
+<p class="text-sm text-slate-500 mb-4">
+AI powered farming assistant with crop disease detection and bilingual chatbot.
 </p>
 
 <div class="flex flex-wrap gap-2 mb-4">
@@ -168,23 +180,50 @@ AI powered farming web app with disease detection and AI chatbot.
 <span class="tag">AI</span>
 </div>
 
-<a href="#" class="text-primary font-semibold text-sm flex items-center gap-1">
+<a href="https://9000-firebase-studio-1760612116213.cluster-m7dwy2bmizezqukxkuxd55k5ka.cloudworkstations.dev/" class="text-primary font-semibold text-sm">
 Live Demo →
 </a>
 
 </div>
 
 
-<!-- PROJECT -->
+<!-- ATTENDANCE SYSTEM -->
+<div class="project-card desktop bg-white dark:bg-slate-900 p-6 rounded-2xl">
 
+<span class="material-symbols-outlined text-5xl text-primary mb-4">computer</span>
+
+<h3 class="text-xl font-bold mb-2">
+Attendance Management System
+</h3>
+
+<p class="text-sm text-slate-500 mb-4">
+Java desktop application using JDBC and MySQL for attendance tracking.
+</p>
+
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="tag">Java</span>
+<span class="tag">MySQL</span>
+<span class="tag">OOP</span>
+</div>
+
+<a href="https://github.com/Ftaj03/AttendanceManagement_System.git" class="text-primary font-semibold text-sm">
+Source Code →
+</a>
+
+</div>
+
+
+<!-- PET ADOPTION -->
 <div class="project-card web bg-white dark:bg-slate-900 p-6 rounded-2xl">
 
 <span class="material-symbols-outlined text-5xl text-primary mb-4">pets</span>
 
-<h3 class="text-xl font-bold mb-2">Pet Adoption Website</h3>
+<h3 class="text-xl font-bold mb-2">
+Pet Adoption Website
+</h3>
 
-<p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
-Responsive website helping users find and adopt pets.
+<p class="text-sm text-slate-500 mb-4">
+Responsive pet adoption platform with optimized UI/UX.
 </p>
 
 <div class="flex flex-wrap gap-2 mb-4">
@@ -194,70 +233,135 @@ Responsive website helping users find and adopt pets.
 </div>
 
 <a href="https://github.com/Ftaj03/Pet-adoption-website.git" class="text-primary font-semibold text-sm">
-View Code →
+Source Code →
 </a>
 
 </div>
 
 
-<!-- PROJECT -->
-
+<!-- CODEX -->
 <div class="project-card data bg-white dark:bg-slate-900 p-6 rounded-2xl">
 
-<span class="material-symbols-outlined text-5xl text-primary mb-4">analytics</span>
+<span class="material-symbols-outlined text-5xl text-primary mb-4">insights</span>
 
-<h3 class="text-xl font-bold mb-2">Market Analysis (CodeX)</h3>
+<h3 class="text-xl font-bold mb-2">
+Market Analysis – CodeX
+</h3>
 
-<p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
-EDA and dashboard insights from 10k+ respondents survey data.
+<p class="text-sm text-slate-500 mb-4">
+Survey analysis of 10,000+ respondents using Excel dashboards.
 </p>
 
 <div class="flex flex-wrap gap-2 mb-4">
 <span class="tag">Excel</span>
 <span class="tag">EDA</span>
-<span class="tag">Dashboard</span>
-</div>
-
-</div>
-
-
-<!-- PROJECT -->
-
-<div class="project-card data bg-white dark:bg-slate-900 p-6 rounded-2xl">
-
-<span class="material-symbols-outlined text-5xl text-primary mb-4">bar_chart</span>
-
-<h3 class="text-xl font-bold mb-2">Data Professional Survey</h3>
-
-<p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
-Data visualization dashboard analyzing industry salary trends.
-</p>
-
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="tag">Power BI</span>
-<span class="tag">Excel</span>
 <span class="tag">Analytics</span>
 </div>
 
 </div>
 
 
-<!-- PROJECT -->
+<!-- FOODIE FI -->
+<div class="project-card data bg-white dark:bg-slate-900 p-6 rounded-2xl">
 
+<span class="material-symbols-outlined text-5xl text-primary mb-4">database</span>
+
+<h3 class="text-xl font-bold mb-2">
+Foodie-Fi Subscription SQL Analysis
+</h3>
+
+<p class="text-sm text-slate-500 mb-4">
+Advanced SQL queries to analyze subscription lifecycle data.
+</p>
+
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="tag">SQL</span>
+<span class="tag">CTE</span>
+<span class="tag">Joins</span>
+</div>
+
+</div>
+
+
+<!-- FLYING WHALE -->
+<div class="project-card data bg-white dark:bg-slate-900 p-6 rounded-2xl">
+
+<span class="material-symbols-outlined text-5xl text-primary mb-4">flight</span>
+
+<h3 class="text-xl font-bold mb-2">
+FlyingWhale BI Dashboard
+</h3>
+
+<p class="text-sm text-slate-500 mb-4">
+Power BI dashboard analyzing airline loyalty engagement.
+</p>
+
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="tag">Power BI</span>
+<span class="tag">DAX</span>
+</div>
+
+</div>
+
+
+<!-- DATA SURVEY -->
+<div class="project-card data bg-white dark:bg-slate-900 p-6 rounded-2xl">
+
+<span class="material-symbols-outlined text-5xl text-primary mb-4">bar_chart</span>
+
+<h3 class="text-xl font-bold mb-2">
+Data Professional Survey
+</h3>
+
+<p class="text-sm text-slate-500 mb-4">
+Industry salary and demographic analysis from survey data.
+</p>
+
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="tag">Power BI</span>
+<span class="tag">Statistics</span>
+</div>
+
+</div>
+
+
+<!-- ONLINE SALES -->
+<div class="project-card data bg-white dark:bg-slate-900 p-6 rounded-2xl">
+
+<span class="material-symbols-outlined text-5xl text-primary mb-4">shopping_bag</span>
+
+<h3 class="text-xl font-bold mb-2">
+Online Sales Analysis Dashboard
+</h3>
+
+<p class="text-sm text-slate-500 mb-4">
+Retail dataset analysis identifying revenue and seasonal trends.
+</p>
+
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="tag">Excel</span>
+<span class="tag">Power BI</span>
+</div>
+
+</div>
+
+
+<!-- UIUX -->
 <div class="project-card design bg-white dark:bg-slate-900 p-6 rounded-2xl">
 
 <span class="material-symbols-outlined text-5xl text-primary mb-4">palette</span>
 
-<h3 class="text-xl font-bold mb-2">UI/UX Design Portfolio</h3>
+<h3 class="text-xl font-bold mb-2">
+UI/UX Design Projects
+</h3>
 
-<p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
-Mobile app interfaces, social media branding and design systems.
+<p class="text-sm text-slate-500 mb-4">
+Travel app, e-commerce UI and social media branding designs.
 </p>
 
 <div class="flex flex-wrap gap-2 mb-4">
 <span class="tag">Figma</span>
-<span class="tag">UI/UX</span>
-<span class="tag">Branding</span>
+<span class="tag">Canva</span>
 </div>
 
 </div>
@@ -270,18 +374,24 @@ Mobile app interfaces, social media branding and design systems.
 
 <script>
 
-function filterProjects(category){
+function filterProjects(category,btn){
 
-let projects=document.querySelectorAll(".project-card")
+let cards=document.querySelectorAll(".project-card")
+let buttons=document.querySelectorAll(".filter-btn")
 
-projects.forEach(card=>{
+buttons.forEach(b=>b.classList.remove("active"))
+btn.classList.add("active")
+
+cards.forEach(card=>{
 
 if(category==="all"){
 card.style.display="block"
 }
+
 else if(card.classList.contains(category)){
 card.style.display="block"
 }
+
 else{
 card.style.display="none"
 }
