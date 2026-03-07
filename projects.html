@@ -8,8 +8,38 @@
 
 <body class="bg-background-light">
 
-<header>
-<!-- SAME NAVBAR AS INDEX -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="bg-primary text-white p-1.5 rounded-lg">
+<span class="material-symbols-outlined text-xl">terminal</span>
+</div>
+<span class="text-xl font-extrabold tracking-tight text-primary">FT.</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#about">About</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#skills">Skills</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#projects">Projects</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+
+    <!-- Dark Mode Toggle Button -->
+    <button id="theme-toggle"
+        class="p-2 rounded-lg bg-gray-200 dark:bg-slate-700 hover:scale-105 transition-all">
+        <span class="material-symbols-outlined text-xl">
+            dark_mode
+        </span>
+    </button>
+
+    <!-- Resume Button -->
+    <button
+        class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+        Resume
+    </button>
+
+</div>
+</div>
 </header>
 
 <section class="py-24">
